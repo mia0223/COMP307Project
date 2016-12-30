@@ -1,0 +1,98 @@
+<?php
+	if (session_status() == PHP_SESSION_NONE) {
+		session_start();
+	}
+
+?>
+
+<?php
+	include 'userinfo.php';
+?>
+<!DOCTYPE html>
+<html>
+<head>
+<title>New Post</title>
+<link rel="stylesheet" href="newAdd.css" type="text/css">
+
+
+<style>
+body{margin:5px; display: block;font-family: Arial, Helvetica, sans-serif; }
+
+
+
+
+
+</style>
+</head>
+<body>
+<?php
+	include 'upload.php';
+?>
+
+<section>
+	<div class="form">	
+
+	<form class="fill" method="post" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>"  >
+	<p class="header" style="font-size: 25px;">Add New Post</p><br><br>
+		Category:
+		<select id="slct1" name="slct1" >
+		  <option value=""><?php echo $slct1;?></option>
+		  <option value="textbook">textbook</option>
+		  <option value="Furniture" >Furniture</option>
+		  <option value="cloth">cloth</option>
+		  <option value="3c">3C Product</option>
+		  <option value="accessory">Accessories</option>
+		  <option value="other">Others</option>
+		  </select>
+		<br>
+		<span class="error"> <?php echo $sErr;?></span><br>
+		<input type="text" name="pname" placeholder="product name" value="<?php echo $pname;?>"><br>
+		<span class="error"><?php echo $pnameErr;?></span><br>
+		<input type="text" name="price" placeholder="price(numbers)" value="<?php echo $price;?>"><br><br>
+		<span class="error"> <?php echo $priceErr;?></span><br><br>
+		<textarea name="detail" placeholder="detail"><?php echo $detail;?></textarea><br>
+		<span class="error"> </span><br>
+		<input type="text" name="contact" placeholder="phone number" value="<?php echo $contact;?>"><br>
+		<span class="error"> <?php echo $cErr;?></span><br>
+		<input type="text" name="address" placeholder="your address" value="<?php echo $address;?>"><br>
+		<span class="error"> </span><br>
+		<input type="text" name="postcode" placeholder="postcode(required)" value="<?php echo $postcode;?>"><br>
+		<span class="error"> <?php echo $pcErr;?></span><br>
+		<br>
+		Select image to upload:
+	    <input type="file" name="fileToUpload" id="fileToUpload"><br><br>
+	    <span class="error"> <?php echo $iErr;?></span><br>
+	    <br>
+		<input type="submit" name="submit" value="submit">
+	</form>
+	</div>
+</section>
+
+<footer>
+<div class="aboutUs">
+<p class="footerTitle">More About Our Team</p>
+<p> Our four great team members are Julie Li, Shuran Zheng, Taylor Zhang and Mia Wang. <br><br>
+	We are still trying to perfect our website, if you have any good ideas or any suggestions, do not hesitate to tell us. We are always there &#60;3 <br><br><br><br></p>
+
+</div>
+
+<div class="contactInfo">
+<p class="footerTitle">Contact Infomation</p>
+<p>Team Name: COMP307 project</p>
+<p>Team Address: 3rd Floor<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trottier Building<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;McGill University</p>
+<p>Phone: 514-123-1234</p>
+<p>Email: helloWorld@mail.mcgill.ca</p>
+</div>
+
+<div class="CopyRight">
+<p>&copy;All Rights Reserved|Designed By Team</p>
+<a href="http://www.mcgill.ca">Team Information &nbsp;</a>
+<a href="http://www.mcgill.ca">Privacy Policy &nbsp;</a>
+<a href="http://www.mcgill.ca">Terms&amp;Conditions &nbsp;</a>
+<br><br><br><br>
+</footer>
+
+</body>
+</html>

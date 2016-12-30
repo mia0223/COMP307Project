@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>items exchange</title>
+
+<link rel="stylesheet" type="text/css" href="project.css">
+
+</head>
+
+<body>
+
+<?php 
+include 'case.php';
+?>
+
+<div class="div1"><form id="search">
+	<!-- <input type="text" maxlength="30" placeholder="COMP307" style="width: 150px; height: 20px;"> 
+	<button id="s1" onclick="func1()" >Search</button> -->
+</form></div>
+
+<div class="div2"><p>Free For Sale</p></div>
+
+<nav class="horizontal" id="navBar"><ul>
+	<li><a href="http://julie.apple/index.html">Home</a></li>
+	<li><a href="?page=textbook"><span>TextBooks</span></a></li>
+	<li><a href="?page=cloth">Clothes</a></li>
+	<li><a href="?page=furniture">Furnitures</a></li>
+	<li><a href="?page=3c">3C Products</a></li>
+	<li><a href="?page=accessory">Accessories</a></li>
+	<li><a href="?page=other">Others</a></li>
+</ul></nav>
+
+<div>
+<?php
+	if(isset($_GET['page'])){ $page = $_GET['page']; }
+	else{ $page = ""; }
+	if(isset($_GET['productID'])){$productID = $_GET['productID']; }
+	else{ $productID = ""; }
+	include 'test.php';
+?>
+</div>
+
+<footer>
+<div class="aboutUs">
+<p class="footerTitle">More About Our Team</p>
+<p> Our four great team members are Julie Li, Shuran Zheng, Taylor Zhang and Mia Wang. <br><br>
+	We are still trying to perfect our website, if you have any good ideas or any suggestions, do not hesitate to tell us. We are always there &#60;3 <br><br><br><br></p>
+
+</div>
+
+<div class="contactInfo">
+<p class="footerTitle">Contact Infomation</p>
+<p>Team Name: COMP307 project</p>
+<p>Team Address: 3rd Floor<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trottier Building<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;McGill University</p>
+<p>Phone: 514-123-1234</p>
+<p>Email: helloWorld@mail.mcgill.ca</p>
+</div>
+
+<div class="CopyRight">
+<p>&copy;All Rights Reserved|Designed By Team</p>
+<a href="http://www.mcgill.ca">Team Information &nbsp;</a>
+<a href="http://www.mcgill.ca">Privacy Policy &nbsp;</a>
+<a href="http://www.mcgill.ca">Terms&amp;Conditions &nbsp;</a>
+<br><br><br><br>
+</footer>
+
+
+
+<script>
+//change slides
+var index = 0;
+changeSlides();
+
+function changeSlides(){
+	var i;
+	var x = document.getElementsByClassName("mySlides");
+	for(i=0; i<x.length; i++){
+		x[i].style.display = "none";
+	}
+	index++;
+	if(index > x.length){ index = 1;}
+	x[index-1].style.display = "block";
+	setTimeout(changeSlides, 2000);
+}
+
+
+// several slides can be changed manually
+var slideIndex = 1;
+showDivs(slideIndex, "productList1");
+showDivs(slideIndex, "productList2");
+showDivs(slideIndex, "productList3");
+showDivs(slideIndex, "productList4");
+
+function plusDivs(n, list){
+	if(list == 1){showDivs(slideIndex += n, "productList1");}
+	else if(list == 2){showDivs(slideIndex += n, "productList2");}
+	else if(list == 3){showDivs(slideIndex += n, "productList3");}
+	else{showDivs(slideIndex += n, "productList4");}
+}
+
+function showDivs(n, list){
+	var i;
+	var x = document.getElementsByClassName(list);
+
+	if(n > x.length){slideIndex = 1;}
+	if(n < 1){slideIndex = x.length;}
+	for(i=0; i<x.length; i++){
+		x[i].style.display = "none";
+	}
+	x[slideIndex-1].style.display = "block";
+}
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

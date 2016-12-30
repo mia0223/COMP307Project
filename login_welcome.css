@@ -1,0 +1,116 @@
+
+		body{margin:0px; display: block;font-family: Arial, Helvetica, sans-serif; }
+
+		header{
+			height:42px;
+			display: block;
+			border: 0px solid black;
+			background-color: #b2a0b2;
+		}
+		ul.top{
+			list-style-type: none;
+			margin: 0px ;
+			padding: 0;
+			background-color: white;			
+		}
+		ul.top li{
+			float:left;
+			padding: 0px;
+			width: 70px;
+		}
+		ul.top li a{
+			border: 0px solid black;
+			display: block;
+			color:black;
+			padding:12px 16px 12px 16px;
+			text-align: center;
+			text-decoration: none;
+		}
+		section{
+			background-image: url(http://cdn30.us1.fansshare.com/image/backgroundimage/savin-ny-website-background-web-for-website-1242613460.jpg);
+			width: 100%; 
+			height: 800px;
+		}
+		div.form{
+			margin-top: 10%;
+			display:block;
+		}
+		form.fill{
+			padding-top: 20px;
+			display:block;
+			text-align: center;
+		}
+		div.submit{
+			text-align: center;
+		}
+		div.submit button.s{
+			font-size:17px;width: 36%;height:40px;background-color: #ddbedd;
+			border: none;border-radius: 6px;color: white;text-decoration: none;
+			text-align: center;
+		}
+		p.big{
+			font-size:25px;
+		}
+		.fill input[type=text]{
+			width: 35%;
+			height:40px;
+			margin: 10px 0px;
+			outline: none;
+			font-size:17px;
+		}
+		.fill input[type=password]{
+			width: 35%;
+			height:40px;
+			margin: 10px 0px;
+			outline: none;
+			font-size:17px;
+		}
+		.fill input[type=text]:focus{
+			border: 3px solid #555;
+		}
+
+		.fill input[type=submit]{
+			font-size:17px;
+			width: 35%;
+			height:40px;
+			background-color: #ddbedd;
+		    border: none;
+		    color: white;
+		    text-decoration: none;
+		    cursor: pointer;
+		}
+		
+		footer{
+			display: block;
+			background-color: #938593;
+			width: 100%;
+			height: 150px;
+			position: relative;
+		}
+		ul.bottom{
+			list-style-type: none;
+			margin: 0px 0px;
+			padding: 0px 0px;
+			background-color: white;			
+		}
+		ul.bottom li{
+			float:left;
+			margin: 30px 0px 0px 0px;
+			padding-right: 0px;
+			width: 33%;
+
+		}
+		ul.bottom li a{
+			display: block;
+			color:black;
+			padding:3px 0px 3px 0px;
+			text-align: center;
+			text-decoration: none;
+		}
+		footer p.cr{
+			 text-align: right;
+			 position: absolute;
+			 bottom: 0;
+			 right: 0;
+			 font-size:12px;
+		}

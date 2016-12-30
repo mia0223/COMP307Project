@@ -1,0 +1,30 @@
+body{font-family: Arial; background-image: url(http://zellox.com/wp-content/uploads/2016/05/website-backgrounds-%E2%80%AB1%E2%80%AC-%E2%80%AB%E2%80%AC.jpg); margin:0; background-size: cover;}
+
+table.topBar { width: 100%; background-color: #b2a0b2; border: 0; font-size: 13px; padding: 3px 0 3px 0; font-weight: bold;}
+table.topBar #d1{ padding-left: 10%; padding-right: 0%; padding-top: 5px; padding-bottom: 5px;}
+table.topBar #d2{ padding-right: 10%; padding-top: 5px; padding-bottom: 5px;}
+table.topBar #d3{ padding-left: 40%; padding-right: 5%; padding-top: 5px; padding-bottom: 5px;}
+table.topBar a:link{text-decoration: none; color: white;}
+table.topBar a:visited{color: white;}
+
+
+div.div1{position:absolute; left:10%; top:100px;}
+div.div2{padding-left: 40%; font-size: 35px; color: #874c62; font-weight: bold;}
+div.div1 #s1{padding: 3px 20px; background-color: #ddbedd; border: none;  border-radius: 12px; color:white; font-size: 15px;}
+
+
+nav.horizontal ul{list-style-type: none; text-align: center;}
+nav.horizontal ul li{ display: inline;}
+nav.horizontal ul li a{ display:inline-block; padding:20px 0px 5px 50px; text-decoration: none; color:#874c62; font-weight: bold; font-size: 17px; }
+nav.horizontal #navBar{  }
+nav.horizontal{border-bottom:1px solid #b2a0b2;}
+
+
+
+footer{background-color: #7e677e; font-family: Courier New; color: white; margin-top: 100px;}
+p.footerTitle{font-weight: bold; font-size: 18px}
+div.aboutUs{width: 30%; height:100%; margin-left: 3%; display: inline-block; font-size: 13px;}
+div.contactInfo{width: 30%; height:100%; margin-left: 8%; display: inline-block; font-size: 13px;}
+div.CopyRight{width: 26%; height: 100%; display: inline-block; font-size: 13px;}
+div.CopyRight a{text-decoration: none;}
+

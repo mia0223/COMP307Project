@@ -1,0 +1,25 @@
+		body{margin:0px; display: block;font-family: Arial, Helvetica, sans-serif; }
+
+		header{height:42px;display: block;border: 0px solid black;background-color: #b2a0b2;}
+		ul.top{list-style-type: none;margin: 0px ;padding: 0;background-color: white;			}
+		ul.top li{float:left;padding: 0px;width: 70px;}
+		ul.top li a{border: 0px solid black;display: block;color:black;padding:12px 16px 12px 16px;text-align: center;text-decoration: none;}
+
+
+		section{background-image: url(http://cdn30.us1.fansshare.com/image/backgroundimage/savin-ny-website-background-web-for-website-1242613460.jpg);
+			width: 100%; height: 800px;}
+		div.form{margin-top: 100px;display:block;border: 0px solid black; }
+		form.fill{padding-top: 20px;display:block;text-align: center;line-height: 50%;}
+		p.big{font-size:25px;}
+		.fill input[type=text],input[type=password]{width: 40%;height:40px;margin: 10px 0px;outline: none;font-size:17px;}
+		.fill input[type=text]:focus,input[type=password]:focus{border: 2px solid #555;border-radius: 6px;}
+		.fill input[type=submit]{font-size:17px;width: 41%;height:40px;background-color: #ddbedd;border: none;border-radius: 6px;color: white;text-decoration: none;}
+		.error {color:red; font-size: 15px;}
+
+
+		footer{background-color: #7e677e; font-family: Courier New; color: white; margin-top: 0px;}
+		p.footerTitle{font-weight: bold; font-size: 18px}
+		div.aboutUs{width: 30%; height:100%; margin-left: 3%; display: inline-block; font-size: 13px;}
+		div.contactInfo{width: 30%; height:100%; margin-left: 8%; display: inline-block; font-size: 13px;}
+		div.CopyRight{width: 26%; height: 100%; display: inline-block; font-size: 13px;}
+		div.CopyRight a{text-decoration: none;}

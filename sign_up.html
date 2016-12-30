@@ -1,0 +1,77 @@
+<?php if (session_status() == PHP_SESSION_NONE) {
+		session_start();
+	}
+	?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>SIGN UP</title>
+	<link rel="stylesheet" href="sign.css" type="text/css">
+</head>
+<body>
+	<?php
+		include 'sign_up.php';
+	?>
+
+	<link rel="stylesheet" type="text/css" href="template.css">
+	<header>
+        <!--navigation bar-->
+   	 <ul class="top">
+        <li><a href=index.html target="_self">Home</a></li>
+        <li><a href=log_in.html target="_self">Login</a></li>
+    	</ul>    
+	</header>
+
+
+
+	<section>
+		<div class="form">	
+		<form class="fill"  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+			<p class="big">SIGN UP</p>
+			<input type="text" name="username" placeholder="username length between 3 and 16 (eg.Julie)" value="<?php echo $username;?>"><br>
+			<span class="error"> <?php echo $nameErr;?></span><br>
+			<input type="password" name="password" placeholder="password (6-16 letters)" value="<?php echo $password;?>"><br>
+			<span class="error"> <?php echo $pwdErr;?></span><br>
+			<input type="text" name="email" placeholder="Email (eg. mcgillcomp307@mail.mcgill.ca)" value="<?php echo $email;?>"><br>
+			<span class="error"> <?php echo $emailErr;?></span><br>
+			<input type="text" name="postcode" placeholder="postcode (eg.H2X 3R2)" value="<?php echo $postcode;?>"><br>
+			<span class="error"> <?php echo $pcErr;?></span><br>
+			<input type="text" name="address" placeholder="Address (eg)" value="<?php echo $address;?>"><br>
+			<span class="error"> <?php echo $addErr;?></span><br><br><br>
+			<input type="submit" name="submit" value="submit"><br>
+			<p style="line-height: 100%">Already had an account? <br><a href=log_in.html target="_self" style="text-decoration: none;text-align: right;"><b>log in</b></a>
+			<br>
+			<p style="line-height: 100%">Back to homepage? <br><a href=index.html target="_self" style="text-decoration: none;text-align: right;"><b>Click here!</b></a>
+			</p>
+		</form>
+		</div>
+	</section>
+
+	<footer>
+<div class="aboutUs">
+<p class="footerTitle">More About Our Team</p>
+<p> Our four great team members are Julie Li, Shuran Zheng, Taylor Zhang and Mia Wang. <br><br>
+	We are still trying to perfect our website, if you have any good ideas or any suggestions, do not hesitate to tell us. We are always there &#60;3 <br><br><br><br></p>
+
+</div>
+
+<div class="contactInfo">
+<p class="footerTitle">Contact Infomation</p>
+<p>Team Name: COMP307 project</p>
+<p>Team Address: 3rd Floor<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trottier Building<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;McGill University</p>
+<p>Phone: 514-123-1234</p>
+<p>Email: helloWorld@mail.mcgill.ca</p>
+</div>
+
+<div class="CopyRight">
+<p>&copy;All Rights Reserved|Designed By Team</p>
+<a href="http://www.mcgill.ca">Team Information &nbsp;</a>
+<a href="http://www.mcgill.ca">Privacy Policy &nbsp;</a>
+<a href="http://www.mcgill.ca">Terms&amp;Conditions &nbsp;</a>
+<br><br><br><br>
+</footer>
+</body>
+</html>

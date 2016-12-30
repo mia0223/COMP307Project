@@ -1,0 +1,32 @@
+
+nav.vertical ul{list-style-type: none; width:200px; position: relative; padding-top: 10px;}
+nav.vertical ul #verticalName{font-size:20px; font-weight: bold; color: #874c62;}
+nav.vertical ul li{ padding: 10px 3px 5px 15px; font-size: 15px;}
+nav.vertical ul li a{ display: block; color:#ac7339;}
+
+div.slides img.mySlides{display: none;}
+
+div.container1{ padding-left: 6%; margin-top: 45px; margin-bottom: 20px;}
+div.div4 {float: left;}
+div.div3 {padding-left: 0%; padding-bottom: 20px; float: left; margin-right: 80px; margin-bottom: 50px;}
+
+
+p.category { font-size: 30px; color: #874c62; font-family: Courier New; margin: 40px 0 -10px 0; text-align: center; font-weight: bold;}
+div.container2 {margin: auto; width: 95%; clear: both;}
+div.container2 #container2a{ margin-top: 440px;}
+div.productList1{margin: auto; width:80%;}
+div.productList2{margin: auto; width:80%;}
+div.productList3{margin: auto; width:80%;}
+div.productList4{margin: auto; width:80%;}
+a.leftArrow{margin-top: 20px;}
+a.rightArrow{margin-top: 20px;}
+
+div.showImg {display: inline-block;}
+div.showImg a:link{text-decoration: none; color: black;}
+div.showImg a:visited{color: black;}
+div.showImg figcaption{text-align: center;}
+
+a.rightArrow{position: absolute; cursor:pointer; font-size: 50px; 
+			padding-top: 50px; padding-left: 5px; color: grey;}
+a.leftArrow{position: absolute; cursor:pointer; font-size: 50px;
+			padding-top: 50px; color: grey;}

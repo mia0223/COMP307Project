@@ -1,0 +1,119 @@
+<?php
+    if (session_status() == PHP_SESSION_NONE) {
+		session_start();
+	}
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>LOG IN</title>
+	<link rel="stylesheet" type="text/css" href="login_welcome.css">
+</head>
+<body>
+	<section>
+		<div class="form">	
+		<form class="fill">
+		    <p class="big"> LOG IN</p>
+			<input type="text" name="name" placeholder="username (eg.zhening.email)"><br>
+			<p id="invalidID" style="color: red;"></p>
+			<input type="password" name="password" placeholder="password (6-16 letters)">
+			<p id="invalidPass" style="color: red;"></p><br>
+		</form>
+		<div class="submit">
+			<button onclick="func()" class="s">Submit<br></button>
+			<p>Do not have an account? <br><a href=sign_up.html target="_blank" style="text-decoration: none;text-align: right;"><b>register</b></a></p>
+		</div>
+		</div>
+		
+	</section>
+</body>
+<script>
+	function func(){
+		var x = document.getElementsByName("password")[0].value;
+		var name = document.getElementsByName("name")[0].value;
+		var key = 0;
+
+		// generate prime private key && calculate public key
+		while(key == 0){
+		key = Math.floor(Math.random() * (50 - 10 + 1)) + 10;
+		var i;
+		for(i = 2; i < key; i++) {
+		    if(key % i === 0) {
+		        key = 0;
+		    }
+		}
+		}
+
+		var modulo = 256;
+		var temp = [];
+
+		var public = xgcd(key, modulo)[0];
+
+		if(public < 0){
+			public += 256;
+		}
+		// encoding
+		var cipher = [];
+		var len = x.length;
+		var i = 0;
+		for(i=0; i<len; i++){
+			if(x.charAt(i) != '\0'){
+				var c = x.charCodeAt(i);
+				cipher[i]=(c*key)%modulo;
+				//cipher[i] = String.fromCharCode(n);
+			}
+		}
+		var output = cipher.join(",");
+
+		try{
+			var request = new XMLHttpRequest();
+
+			request.onreadystatechange = function(){
+				//document.getElementById("debug").innerHTML = 
+				if (this.readyState == 4 && this.status == 200){
+					if(this.responseText == "invalidPass"){
+						document.getElementById("invalidPass").innerHTML = "invalid password";
+						document.getElementById("debug").innerHTML = "";
+					}
+					else if(this.responseText == "invalidID"){
+						document.getElementById("invalidID").innerHTML = "invalid user ID";
+						document.getElementById("invalidPass").innerHTML = "";
+						document.getElementById("debug").innerHTML = "";
+					}
+					else{
+						//document.getElementById("debug").innerHTML = this.responseText;
+						window.open("http://julie.apple/index.html", "_self");
+					}
+				}
+				else{
+					document.getElementById("debug").innerHTML = "ERRORS HAPPENED!";
+				}
+			}
+
+			request.open("POST", "http://julie.apple/loginCheck.php", true);
+
+			request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+			var send = "output="+output+"&"+"public="+public+"&"+"name="+name;
+			request.send(send);
+
+		}
+		catch(exception){alert('Request Failed');}
+		console.log("status:  ", request.status);
+	}
+
+	function xgcd(key, modulo) { 
+
+		   if (modulo == 0) {
+		     return [1, 0, key];
+		   }
+
+		   temp = xgcd(modulo, key % modulo);
+		   var x = temp[0];
+		   var y = temp[1];
+		   var d = temp[2];
+		   return [y, x-y*Math.floor(key/modulo), d];
+		 }
+</script>
+</html>

@@ -1,0 +1,211 @@
+<?php
+	if (session_status() == PHP_SESSION_NONE) {
+		session_start();
+		}
+		?>
+
+<?php
+	include 'userinfo.php';
+	if(isset($_GET['productID'])){
+		$ID = $_GET['productID'];
+		header ("location:item_template.php?productID=$ID");
+	}
+	else{ $productID = ""; }
+
+?>
+
+<!DOCTYPE html>
+<html>
+	<title>My Space</title>
+	<head>
+		<style>
+		body{margin:0px;}
+		header{
+			height:20;
+
+		}
+		ul.top {list-style-type: none;margin: 0;padding: 10px;text-align: center;}
+		li {display: inline; text-align: center;}
+
+		div.maincontent{
+			background-image: url(http://cdn30.us1.fansshare.com/image/backgroundimage/savin-ny-website-background-web-for-website-1242613460.jpg);
+			width: 100%; height: 800px;
+			border-style: 0px solid;
+		}
+		div.itemforsale{
+
+			float:left;
+			width:50%;
+			height:700px;
+			border-style: 0px solid;
+			padding-top: 20px;
+			padding-left: 130px;
+			padding-right: 100px;
+		}
+		p.title{
+			text-align: center;
+			font-size: 25px;
+		}
+		table.forSale{
+			border-collapse: collapse;
+			font-size: 20px;
+
+		}
+		td{
+			width:200px;
+			height:50px;
+		}
+		tr:nth-child(even){background-color: #f2f2f2}
+		th {
+    		
+    		color: black;
+    		height:50px;
+		}
+		table a{
+			color: black;
+			text-decoration: underline;
+		}
+		div.myinfo{
+			background-color: #f2f2f2;
+			float: left;
+			width: 25%;
+			height:300px;
+			padding-top: 20px;
+			padding-left: 5px;
+			border-style: 0px solid;
+		}
+		p.username{
+			font-size: 24px;
+		}
+		p.info{
+			font-size: 20px;
+		}
+		p.calculator{
+			font-size: 18px;
+		}
+		footer{background-color: #7e677e; font-family: Courier New; color: white; margin-top: 0px;}
+		p.footerTitle{font-weight: bold; font-size: 18px}
+		div.aboutUs{width: 30%; height:100%; margin-left: 3%; display: inline-block; font-size: 13px;}
+		div.contactInfo{width: 30%; height:100%; margin-left: 8%; display: inline-block; font-size: 13px;}
+		div.CopyRight{width: 26%; height: 100%; display: inline-block; font-size: 13px;}
+		div.CopyRight a{text-decoration: none;}
+
+
+		div.div1{position:absolute; left:10%; top:100px;}
+		div.div2{padding-left: 40%; font-size: 35px; color: #874c62; font-weight: bold;}
+		div.div1 #s1{padding: 3px 20px; background-color: #ddbedd; border: none;  border-radius: 12px; color:white; font-size: 15px;}
+
+
+		nav.horizontal ul{list-style-type: none; text-align: center;}
+		nav.horizontal ul li{ display: inline;}
+		nav.horizontal ul li a{ display:inline-block; padding:20px 0px 5px 50px; text-decoration: none; color:#874c62; font-weight: bold; font-size: 17px; }
+		nav.horizontal #navBar{  }
+		nav.horizontal{border-bottom:1px solid #b2a0b2;}
+			
+		</style>
+		
+	</head>
+
+	<body>
+
+
+		<?php
+		echo'
+		<link rel="stylesheet" type="text/css" href="template.css">
+		<header>
+    		<ul class="top">
+    			<li><a href=index.html>Home</a></li>
+        		<li><a href=myspace.html target="_self">'.'Welcome '.$_SESSION['usersession'].'</a></li>
+        		<li><a href=logout.php>Log out</a></li>
+    		</ul>
+        </header>
+        ';
+    ?>
+	    <div class="div1"><form id="search">
+		
+		
+	</form></div>
+
+	<div class="div2"><p>Free For Sale</p></div>
+
+	<br><hr/>
+    <div class="maincontent">
+		<div class="itemforsale">
+			<p class="title">List Of Items for sale</p>
+			<hr />
+			
+			<?php
+
+				include 'personal.php';
+
+			?>
+
+			<div class="add" style="text-align: right;">
+			<br><button><a href="NewAd.html" style="font-size: 15px;">Add New Post</a></button><br>
+			
+			</div>
+		</div>
+
+		<div class="myinfo">
+			<p class="username">
+				<?php 
+					echo $_SESSION['usersession'];
+				?>
+			<p>
+			<p class="info">	
+				
+				<img class="icon" src=http://static.wixstatic.com/media/c346a9_3994c3eeb0844b389f1e3d4f9323b226.png 
+				style="width: 15px; height:15px;">
+				<?php 
+					echo $email;
+				?><br>
+				<img class="icon" src=https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTQ8RTNdraoCR44rR5BYZIKVOUdD9RwcDF-D9xQLFidsYWey68E style="width: 15px; height:15px;" > 
+				<?php 
+					echo $phone;
+				?><br><img class="icon" src=http://simpleicon.com/wp-content/uploads/home-2.png style="width: 15px; height:15px;"> 
+				<?php 
+					echo $address;
+				?><br>
+			</p>
+
+			<div class="chat">
+		<iframe src="http://localhost:3000" height="300" width="305px" style="margin-top: 30px;"></iframe>
+		</div>
+		<div class="calculator">
+		use this mini calculator~
+		<applet code="cal2.class" width="300" height="250" style="margin-top: 0px">
+		</applet>
+		</div>
+
+		</div>
+</div>
+<footer>
+<div class="aboutUs">
+<p class="footerTitle">More About Our Team</p>
+<p> Our four great team members are Julie Li, Shuran Zheng, Taylor Zhang and Mia Wang. <br><br>
+	We are still trying to perfect our website, if you have any good ideas or any suggestions, do not hesitate to tell us. We are always there &#60;3 <br><br><br><br></p>
+
+</div>
+
+<div class="contactInfo">
+<p class="footerTitle">Contact Infomation</p>
+<p>Team Name: COMP307 project</p>
+<p>Team Address: 3rd Floor<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trottier Building<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;McGill University</p>
+<p>Phone: 514-123-1234</p>
+<p>Email: helloWorld@mail.mcgill.ca</p>
+</div>
+
+<div class="CopyRight">
+<p>&copy;All Rights Reserved|Designed By Team</p>
+<a href="http://www.mcgill.ca">Team Information &nbsp;</a>
+<a href="http://www.mcgill.ca">Privacy Policy &nbsp;</a>
+<a href="http://www.mcgill.ca">Terms&amp;Conditions &nbsp;</a>
+<br><br><br><br>
+</footer>
+
+
+	</body>
+
+</html>
